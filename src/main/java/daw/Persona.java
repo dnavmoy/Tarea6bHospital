@@ -11,21 +11,24 @@ import java.util.Objects;
  *
  * @author Dan_n
  */
-public abstract class Persona extends Nif{
+public abstract class Persona {
 
 private String nombre;
 private String apellidos;
+private Nif nif;
 
-    public Persona(String nombre, String apellidos, long numero, LocalDate fechaCaducidad) {
-        super(numero, fechaCaducidad);
+    public Persona(String nombre, String apellidos, Nif nif) {
         this.nombre = nombre;
         this.apellidos = apellidos;
+        this.nif = nif;
     }
+
+  
 
     
 
     public void renovarNIF(LocalDate fechaSolicitud){
-        this.renovarDni(fechaSolicitud);
+        this.nif.renovarDni(fechaSolicitud);
     }
 
     public String getNombre() {

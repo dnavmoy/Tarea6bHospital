@@ -12,7 +12,7 @@ import java.util.Objects;
  * @author Dan_n
  */
 public class Nif {
-    
+
     private long numero;
     private char letra;
     private LocalDate fechaCaducidad;
@@ -35,17 +35,19 @@ public class Nif {
         return letra;
     }
 
-    public void setLetra(char letra) {
-        this.letra = letra;
-    }
+    //
+    //public void setLetra(char letra) {
+    //    this.letra = letra;
+    //}
 
     public LocalDate getFechaCaducidad() {
         return fechaCaducidad;
     }
 
-    public void setFechaCaducidad(LocalDate fechaCaducidad) {
-        this.fechaCaducidad = fechaCaducidad;
-    }
+    //no debe estar ya que podria poner una fecha erronea
+//    public void setFechaCaducidad(LocalDate fechaCaducidad) {
+//        this.fechaCaducidad = fechaCaducidad;
+//    }
 
     @Override
     public int hashCode() {
@@ -87,20 +89,17 @@ public class Nif {
         sb.append('}');
         return sb.toString();
     }
-    
-    private char calcularletra(long numero){
-        
-        int letranum=(int)numero%23;
-        
-        char[] array={'t','r','W','A','G','M','Y','F','P','D','X','B','N','J',
-            'X','S','Q','V','H','L','C','K','E'};
-        return array[letranum];
-        }
-     
-    
-    public void renovarDni(LocalDate fecha){
-        this.fechaCaducidad=fecha.plusYears(10);
-    }
-    }
-    
 
+    private char calcularletra(long numero) {
+
+        int letranum = (int) numero % 23;
+
+        char[] array = {'t', 'r', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J',
+            'X', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E'};
+        return array[letranum];
+    }
+
+    public void renovarDni(LocalDate fecha) {
+        this.fechaCaducidad = fecha.plusYears(10);
+    }
+}

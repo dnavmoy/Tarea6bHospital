@@ -53,7 +53,7 @@ public class GestionHospital {
 
     public static Paciente crearPaciente() {
         Random r = new Random();
-        Paciente paciente = new Paciente(randomLetras(5), randomLetras(8), randomLetras(8), r.nextInt(50), LocalDate.now());
+        Paciente paciente = new Paciente(randomLetras(5), randomLetras(8), randomLetras(8), new Nif(1111, LocalDate.now()));
         return paciente;
     }
 
@@ -66,13 +66,13 @@ public class GestionHospital {
             especialidad = randomLetras(5);
         }
 
-        Medico medico = new Medico(especialidad, randomLetras(8), r.nextDouble(1000, 2000), randomLetras(8), randomLetras(8), r.nextLong(10), LocalDate.now());
+        Medico medico = new Medico(especialidad, randomLetras(5), r.nextInt(2000), randomLetras(5), randomLetras(8), new Nif(1111, LocalDate.now()));
         return medico;
     }
 
     public static Administrativo crearPersonalPAS() {
         Random r = new Random();
-        Administrativo administrativo = new Administrativo(Grupo.randomGrupo(), randomLetras(8), r.nextDouble(1500), randomLetras(8), randomLetras(8), 0, LocalDate.now());
+        Administrativo administrativo = new Administrativo(Grupo.randomGrupo(), randomLetras(5), 0, randomLetras(5), randomLetras(8), new Nif(1111, LocalDate.now()));
         return administrativo;
     }
 

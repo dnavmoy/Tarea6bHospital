@@ -10,4 +10,8 @@ package daw;
  */
 public interface Nadador {
     
+   public void serNadador();
+        
+    
+    
 }

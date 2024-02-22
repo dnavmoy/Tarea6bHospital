@@ -12,14 +12,16 @@ import java.util.Random;
  *
  * @author Dan_n
  */
-public class Paciente extends Persona{
+public class Paciente extends Persona implements Nadador{
     
     private String numeroHistoria;
 
-    public Paciente(String numeroHistoria, String nombre, String apellidos, long numero, LocalDate fechaCaducidad) {
-        super(nombre, apellidos, numero, fechaCaducidad);
+    public Paciente(String numeroHistoria, String nombre, String apellidos, Nif nif) {
+        super(nombre, apellidos, nif);
         this.numeroHistoria = numeroHistoria;
     }
+
+    
 
     public String getNumeroHistoria() {
         return numeroHistoria;
@@ -69,6 +71,10 @@ public class Paciente extends Persona{
             System.out.println("El paciente no se ha curado");
         }
         
+    }
+    
+    public void serNadador(){
+        System.out.println("Soy un paciente que nada");
     }
     
     

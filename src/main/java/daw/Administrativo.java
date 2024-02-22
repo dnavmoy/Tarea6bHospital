@@ -4,21 +4,23 @@
  */
 package daw;
 
-import java.time.LocalDate;
+
 import java.util.Objects;
 
 /**
  *
  * @author Dan_n
  */
-public class Administrativo extends Empleado{
+public final class Administrativo extends Empleado{
     
     private Grupo grupo;
 
-    public Administrativo(Grupo grupo, String numeroSeguridadSocial, double salario, String nombre, String apellidos, long numero, LocalDate fechaCaducidad) {
-        super(numeroSeguridadSocial, salario, nombre, apellidos, numero, fechaCaducidad);
+    public Administrativo(Grupo grupo, String numeroSeguridadSocial, double salario, String nombre, String apellidos, Nif nif) {
+        super(numeroSeguridadSocial, salario, nombre, apellidos, nif);
         this.grupo = grupo;
     }
+
+    
 
     public Grupo getGrupo() {
         return grupo;

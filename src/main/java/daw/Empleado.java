@@ -16,11 +16,13 @@ public abstract class Empleado extends Persona{
     private String numeroSeguridadSocial;
     private double salario;
 
-    public Empleado(String numeroSeguridadSocial, double salario, String nombre, String apellidos, long numero, LocalDate fechaCaducidad) {
-        super(nombre, apellidos, numero, fechaCaducidad);
+    public Empleado(String numeroSeguridadSocial, double salario, String nombre, String apellidos, Nif nif) {
+        super(nombre, apellidos, nif);
         this.numeroSeguridadSocial = numeroSeguridadSocial;
         this.salario = salario;
     }
+
+    
 
     public String getNumeroSeguridadSocial() {
         return numeroSeguridadSocial;
